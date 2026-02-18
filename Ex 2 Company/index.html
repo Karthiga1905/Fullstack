@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TechNova Solutions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+body{
+  scroll-behavior:smooth;
+  font-family:"Segoe UI", sans-serif;
+}
+
+.navbar{
+  background:#0f766e;
+}
+
+.hero{
+  background: linear-gradient(135deg,#5eead4,#38bdf8);
+  color:#0f172a;
+  padding:90px 0;
+}
+
+.section-padding{
+  padding:70px 0;
+}
+
+.card{
+  border:none;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  transition:0.3s;
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+.team-img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:3px solid #14b8a6;
+}
+
+.counter{
+  font-size:32px;
+  font-weight:700;
+  color:#f87241;
+}
+
+.bg-soft{
+  background:#f8fafc;
+}
+
+.about-img{
+  width:100%;
+  max-width:280px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+footer{
+  background:#0f766e;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+
+  <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+    <img src="logo" width="35" height="35" class="me-2 rounded-circle">
+    TechNova
+  </a>
+
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="nav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+</div>
+</nav>
+
+
+<section id="home" class="mt-5">
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner hero text-center">
+
+    <div class="carousel-item active">
+      <h1 class="fw-bold">TechNova Solutions</h1>
+      <p class="lead">Building elegant digital experiences</p>
+    </div>
+
+    <div class="carousel-item">
+      <h1 class="fw-bold">Web & App Development</h1>
+      <p class="lead">Simple • Clean • Responsive</p>
+    </div>
+
+    <div class="carousel-item">
+      <h1 class="fw-bold">Grow With Technology</h1>
+      <p class="lead">Smart solutions for modern business</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+<section class="section-padding text-center">
+<div class="container">
+<div class="row">
+  <div class="col-md-4">
+    <div class="counter">150+</div>
+    <p>Projects</p>
+  </div>
+  <div class="col-md-4">
+    <div class="counter">100+</div>
+    <p>Clients</p>
+  </div>
+  <div class="col-md-4">
+    <div class="counter">5+</div>
+    <p>Years Experience</p>
+  </div>
+</div>
+</div>
+</section>
+
+
+<section id="about" class="section-padding bg-soft">
+<div class="container">
+<div class="row align-items-center">
+
+  
+  <div class="col-md-5 text-center mb-4 mb-md-0">
+    <img src="com" class="about-img" alt="About TechNova">
+  </div>
+
+  
+  <div class="col-md-7">
+    <h2 class="fw-bold mb-3">About TechNova Solutions</h2>
+    <p>
+      TechNova Solutions is a modern IT company delivering high-quality
+      web and mobile applications. We focus on clean design, smooth user
+      experience and powerful technology.
+    </p>
+    <p>
+      Our mission is to help businesses grow using scalable, secure and
+      innovative digital solutions built with the latest technologies.
+    </p>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<section id="services" class="section-padding">
+<div class="container">
+<h2 class="text-center fw-bold mb-5">Our Services</h2>
+
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="card text-center p-4">
+      <i class="bi bi-code-slash fs-1 text-info"></i>
+      <h5 class="mt-3">Web Development</h5>
+      <p>Modern, responsive and fast websites.</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card text-center p-4">
+      <i class="bi bi-phone fs-1 text-success"></i>
+      <h5 class="mt-3">App Development</h5>
+      <p>User-friendly mobile applications.</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card text-center p-4">
+      <i class="bi bi-cloud fs-1 text-primary"></i>
+      <h5 class="mt-3">Cloud Solutions</h5>
+      <p>Secure and scalable cloud services.</p>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+<section id="team" class="section-padding bg-soft">
+<div class="container">
+<h2 class="text-center fw-bold mb-5">Our Team</h2>
+
+<div class="row text-center">
+  <div class="col-md-4">
+    <div class="card p-4">
+      <img src="boy" class="team-img mx-auto mb-2">
+      <h6>Arun</h6>
+      <p>CEO</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card p-4">
+      <img src="girl1" class="team-img mx-auto mb-2">
+      <h6>Priya</h6>
+      <p>Lead Developer</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card p-4">
+      <img src="boy3" class="team-img mx-auto mb-2">
+      <h6>Rahul</h6>
+      <p>UI/UX Designer</p>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+<section id="contact" class="section-padding text-center">
+<div class="container">
+<h2 class="fw-bold mb-3">Contact Us</h2>
+<p>Email: technova@gmail.com</p>
+<p>Phone: +91 98765 43210</p>
+</div>
+</section>
+
+
+<footer class="text-center p-3">
+<p>&copy; 2026 TechNova Solutions</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
