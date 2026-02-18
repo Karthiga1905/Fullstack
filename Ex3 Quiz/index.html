@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KCET Learning - Quiz App</title>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body align="center">
+
+    <h1>KCET Learning</h1>
+
+    <hr>
+
+    <h2 id="question"></h2>
+
+    <form id="quizForm">
+        <div id="options"></div>
+    </form>
+
+    <br>
+
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+
+    <br><br>
+
+    <div id="result" style="display:none;">
+        <h3 id="score"></h3>
+        <button id="restart">Restart Quiz</button>
+    </div>
+
+<script>
+$(document).ready(function () {
+
+    let quizData = [
+        {
+            question: "What is jQuery?",
+            options: ["Java Language", "JavaScript Library", "CSS Framework", "Database"],
+            answer: 1
+        },
+        {
+            question: "Which symbol is used for jQuery?",
+            options: ["#", "$", "@", "&"],
+            answer: 1
+        },
+        {
+            question: "Which function runs jQuery code?",
+            options: ["start()", "ready()", "run()", "load()"],
+            answer: 1
+        },
+        {
+            question: "jQuery is mainly used for?",
+            options: ["Database", "Server-side scripting", "DOM manipulation", "OS"],
+            answer: 2
+        },
+        {
+            question: "Which file extension is used for jQuery?",
+            options: [".java", ".js", ".jquery", ".html"],
+            answer: 1
+        },
+        {
+            question: "Which method hides elements?",
+            options: ["hide()", "remove()", "delete()", "clear()"],
+            answer: 0
+        },
+        {
+            question: "Which event is used for button click?",
+            options: ["hover()", "click()", "press()", "tap()"],
+            answer: 1
+        },
+        {
+            question: "Which method shows fade effect?",
+            options: ["fadeIn()", "slide()", "show()", "animate()"],
+            answer: 0
+        },
+        {
+            question: "Which selector is used for ID?",
+            options: [".", "#", "*", "%"],
+            answer: 1
+        },
+        {
+            question: "Which library must be included to use jQuery?",
+            options: ["Angular", "Bootstrap", "jQuery", "React"],
+            answer: 2
+        }
+    ];
+
+    let currentQuestion = 0;
+    let userAnswers = [];
+    let score = 0;
+
+    function loadQuestion() {
+        $("#question").text(quizData[currentQuestion].question);
+        $("#options").html("");
+
+        quizData[currentQuestion].options.forEach(function (option, index) {
+            let checked = userAnswers[currentQuestion] === index ? "checked" : "";
+            $("#options").append(
+                `<input type="radio" name="option" value="${index}" ${checked}>
+                 ${option}<br>`
+            );
+        });
+    }
+
+    $("#next").click(function () {
+
+        if ($("input[name='option']:checked").length === 0) {
+            alert("Please select an answer!");
+            return;
+        }
+
+        userAnswers[currentQuestion] = parseInt($("input[name='option']:checked").val());
+        currentQuestion++;
+
+        if (currentQuestion < quizData.length) {
+            loadQuestion();
+        } else {
+            showResult();
+        }
+    });
+
+    $("#prev").click(function () {
+        if (currentQuestion > 0) {
+            currentQuestion--;
+            loadQuestion();
+        }
+    });
+
+    function showResult() {
+        score = 0;
+
+        quizData.forEach(function (q, i) {
+            if (q.answer === userAnswers[i]) {
+                score++;
+            }
+        });
+
+        $("#question, #options, #prev, #next").hide();
+        $("#result").show();
+        $("#score").text("Your Score: " + score + " / " + quizData.length);
+    }
+
+    $("#restart").click(function () {
+        currentQuestion = 0;
+        userAnswers = [];
+        score = 0;
+
+        $("#question, #options, #prev, #next").show();
+        $("#result").hide();
+        loadQuestion();
+    });
+
+    loadQuestion();
+});
+</script>
+
+</body>
+</html>
